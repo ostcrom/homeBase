@@ -1,13 +1,13 @@
 # homeBase
 
-homeBase is a stack of software that I use often, deployed to docker using docker-compose.
-
+homeBase is a stack of software that I use often, deployed to docker using docker-compose.  
+  
 Requirements:
-Linux OS (tested on Ubuntu 20.04, probably works on others as everything runs in Docker.)
-git
-docker
-docker-compose
-whiptail
+Linux OS (tested on Ubuntu 20.04, probably works on others as everything runs in Docker.)  
+git  
+docker  
+docker-compose  
+whiptail  
 
 ## Included components:
 ### sslh
@@ -27,7 +27,7 @@ Download this repository using git:
 `git clone https://github.com/ostcrom/homeBase`
 
 Change into that directory and run the set up:
-`cd homeBase
-.\setup.sh`
+`cd homeBase  
+.\setup.sh`  
 
 If HTTPS certificates are not present in the specified keys directory, the openssl keygeneration process will run. 

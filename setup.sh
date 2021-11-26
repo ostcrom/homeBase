@@ -27,7 +27,7 @@ O_KEYS_DIRECTORY=$(whiptail --inputbox "Specify SSL keys directory :" \
 CONFIG_ARR=("V_TRANSMISSION_DOWNLOADS" "V_TRANSMISSION_CONFIG" \
 	"E_UBUNTU_VNC_HTTP_PASSWORD" "O_KEYS_DIRECTORY")
 
-cp ./docker-compose.yml.example ./docker-compose.yml
+cp ./docker-compose.example.yml ./docker-compose.yml
 
 echo "Generating new docker-compose file from docker-compose.yml.example"
 for option in ${CONFIG_ARR[*]}

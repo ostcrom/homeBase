@@ -1,0 +1,7 @@
+##Don't commit keys files:
+/keys/
+##Don't commit a completed config:
+/docker-compose.yml
+
+##Ignore vi swap files:
+*.swp

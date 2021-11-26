@@ -27,7 +27,7 @@ Download this repository using git:
 `git clone https://github.com/ostcrom/homeBase`
 
 Change into that directory and run the set up:
-`cd homeBase  
-.\setup.sh`  
+`cd homeBase`  
+`.\setup.sh`  
 
 If HTTPS certificates are not present in the specified keys directory, the openssl keygeneration process will run. 

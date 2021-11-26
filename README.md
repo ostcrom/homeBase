@@ -26,7 +26,7 @@ An HTML5 VNC client, that connects to an Ubuntu desktop running in the same cont
 Download this repository using git:
 `git clone https://github.com/ostcrom/homeBase`
 
-Change into that directory and run the set up:
+Change into that directory and run the set up:  
 `cd homeBase`  
 `.\setup.sh`  
 

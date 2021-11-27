@@ -15,8 +15,23 @@ V_TRANSMISSION_CONFIG=$(whiptail --inputbox "Specify Transmission config directo
        	8 39 --title "Transmission config directory" 3>&1 1>&2 2>&3)
 	exit_check
 	
+E_UBUNTU_VNC_USERNAME=$(whiptail \
+	--inputbox "Specify VNC username:" \
+	8 39 --title "VNC HTTP username" 3>&1 1>&2 2>&3)
+	exit_check
+
+E_UBUNTU_VNC_PASSWORD=$(whiptail \
+	--inputbox "Specify VNC desktop password:" \
+	8 39 --title "VNC desktop password" 3>&1 1>&2 2>&3)
+	exit_check
+
+V_UBUNTU_VNC_HOME_DIR=$(whiptail \
+	--inputbox "Specify VNC user home directory mapping (the specified directory will be mapped to /home/[USER] in the container):" \
+	8 39 --title "VNC home directory mapping" 3>&1 1>&2 2>&3)
+	exit_check
+
 E_UBUNTU_VNC_HTTP_PASSWORD=$(whiptail \
-	--inputbox "Specify VNC HTTP password (username is root):" \
+	--inputbox "Specify VNC HTTP password:" \
 	8 39 --title "VNC HTTP password" 3>&1 1>&2 2>&3)
 	exit_check
 	
@@ -25,7 +40,9 @@ O_KEYS_DIRECTORY=$(whiptail --inputbox "Specify SSL keys directory :" \
 	exit_check
 	
 CONFIG_ARR=("V_TRANSMISSION_DOWNLOADS" "V_TRANSMISSION_CONFIG" \
-	"E_UBUNTU_VNC_HTTP_PASSWORD" "O_KEYS_DIRECTORY")
+	"E_UBUNTU_VNC_HTTP_PASSWORD" "O_KEYS_DIRECTORY" \
+	"E_UBUNTU_VNC_USERNAME" "E_UBUNTU_VNC_PASSWORD" \
+	"V_UBUNTU_VNC_HOME_DIR")
 
 cp ./docker-compose.example.yml ./docker-compose.yml
 

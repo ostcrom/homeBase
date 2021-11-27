@@ -26,10 +26,16 @@ services:
                 networks:
                         - homebase
         ubuntu-vnc:
-                image: dorowu/ubuntu-desktop-lxde-vnc
+                build:
+                        context: ./ubuntu-vnc
+                        dockerfile: ./Dockerfile
                 environment:
                         - RELATIVE_URL_ROOT=vnc
                         - HTTP_PASSWORD=[[E_UBUNTU_VNC_HTTP_PASSWORD]]
+                        - USER=[[E_UBUNTU_VNC_USERNAME]]
+                        - PASSWORD=[[E_UBUNTU_VNC_PASSWORD]]
+                volumes:
+                        - [[V_UBUNTU_VNC_HOME_DIR]]:/home/[[E_UBUNTU_VNC_USERNAME]]
                 networks:
                         - homebase
 networks:

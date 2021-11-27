@@ -23,7 +23,7 @@ Bittorrent client, accessible at https://HOSTNAME/transmission/web/
 ### Ubuntu VNC instance
 An HTML5 VNC client, that connects to an Ubuntu desktop running in the same container. Not persistent (yet.) Accessible at https://HOSTNAME/vnc/
 
-## Set up.
+## Set up:
 Download this repository using git:  
 `git clone https://github.com/ostcrom/homeBase`
 

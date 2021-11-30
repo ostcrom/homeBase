@@ -6,6 +6,9 @@ function exit_check {
 		exit
 	fi
 }
+O_HOMEBASE_NAME=$(whiptail --inputbox "Name this homeBase instance:"\
+       	8 39 --title "homeBase instance name" 3>&1 1>&2 2>&3)
+	exit_check
 
 V_TRANSMISSION_DOWNLOADS=$(whiptail --inputbox "Specify Transmission download directory:"\
        	8 39 --title "Transmission downloads directory" 3>&1 1>&2 2>&3)
@@ -27,7 +30,7 @@ E_UBUNTU_VNC_PASSWORD=$(whiptail \
 
 V_UBUNTU_VNC_HOME_DIR=$(whiptail \
 	--inputbox "Specify VNC user home directory mapping (the specified directory will be mapped to /home/[USER] in the container):" \
-	8 39 --title "VNC home directory mapping" 3>&1 1>&2 2>&3)
+	8 75 --title "VNC home directory mapping" 3>&1 1>&2 2>&3)
 	exit_check
 
 E_UBUNTU_VNC_HTTP_PASSWORD=$(whiptail \

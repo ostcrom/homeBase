@@ -6,6 +6,13 @@ function exit_check {
 		exit
 	fi
 }
+O_HOMEBASE_NAME=$(whiptail --inputbox "Name this homeBase instance:"\
+       	8 39 --title "homeBase instance name" 3>&1 1>&2 2>&3)
+	exit_check
+
+O_HOMEBASE_HOSTNAME=$(whiptail --inputbox "Specify this homeBase hostname:"\
+       	8 39 --title "homeBase hostname" 3>&1 1>&2 2>&3)
+	exit_check
 
 V_TRANSMISSION_DOWNLOADS=$(whiptail --inputbox "Specify Transmission download directory:"\
        	8 39 --title "Transmission downloads directory" 3>&1 1>&2 2>&3)
@@ -27,7 +34,7 @@ E_UBUNTU_VNC_PASSWORD=$(whiptail \
 
 V_UBUNTU_VNC_HOME_DIR=$(whiptail \
 	--inputbox "Specify VNC user home directory mapping (the specified directory will be mapped to /home/[USER] in the container):" \
-	8 39 --title "VNC home directory mapping" 3>&1 1>&2 2>&3)
+	8 75 --title "VNC home directory mapping" 3>&1 1>&2 2>&3)
 	exit_check
 
 E_UBUNTU_VNC_HTTP_PASSWORD=$(whiptail \
@@ -39,10 +46,14 @@ O_KEYS_DIRECTORY=$(whiptail --inputbox "Specify SSL keys directory :" \
 	8 39 --title "SSL Keys directory" 3>&1 1>&2 2>&3)
 	exit_check
 	
+ V_VAULTWARDEN_DATA=$(whiptail --inputbox "Specify Vaultwarden data path:" \
+	8 39 --title "Vaultwarden data path" 3>&1 1>&2 2>&3)
+	exit_check
+	
 CONFIG_ARR=("V_TRANSMISSION_DOWNLOADS" "V_TRANSMISSION_CONFIG" \
 	"E_UBUNTU_VNC_HTTP_PASSWORD" "O_KEYS_DIRECTORY" \
 	"E_UBUNTU_VNC_USERNAME" "E_UBUNTU_VNC_PASSWORD" \
-	"V_UBUNTU_VNC_HOME_DIR")
+	"V_UBUNTU_VNC_HOME_DIR" "V_VAULTWARDEN_DATA" "O_HOMEBASE_HOSTNAME")
 
 cp ./docker-compose.example.yml ./docker-compose.yml
 

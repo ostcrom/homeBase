@@ -38,6 +38,15 @@ services:
                         - [[V_UBUNTU_VNC_HOME_DIR]]:/home/[[E_UBUNTU_VNC_USERNAME]]
                 networks:
                         - homebase
+        vaultwarden:
+                image: vaultwarden/server:latest
+                environment:
+                        - WEBSOCKET_ENABLED=true  # Enable WebSocket notifications.
+                        - DOMAIN=https://[[O_HOMEBASE_HOSTNAME]]/vault/
+                volumes:
+                        - [[V_VAULTWARDEN_DATA]]:/data
+                networks:
+                        - homebase
 networks:
         homebase:
                 driver: bridge        

@@ -9,7 +9,7 @@ docker
 docker-compose  
 openssl
 
-##December 2023 updates:
+## December 2023 updates:
 - Simplified install (from a dev standpoint 😏) by getting rid of set up script. Set up now requires manually copying and filling in the example yaml. I'm welcome!
 - Got rid of SSLH and Ubuntu VNC services.
 
